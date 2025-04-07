@@ -21,14 +21,14 @@
   <!-- Lancio nodo continuos detection node -->
   <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node" clear_params="true" output="screen" launch-prefix="$(arg launch_prefix)">
   <!-- Remap topics from those used in code to those on the ROS network -->
-  <remap from="image_rect" to="$(arg camera_name)/image_raw" />
+  <remap from="image_rect" to="/res$(arg camera_name)/image_raw" />
 
   <param name="publish_tag_detections_image" type="bool" value="true" /><!-- default: false -->
   <param name="queue_size" type="int" value="$(arg queue_size)" />
 
   <!-- Caricare file di configurazione -->
-  <rosparam command="load" file="$(find script_pkg)/config/settings_tool.yaml"/>
-  <rosparam command="load" file="$(find script_pkg)/config/tags_tool.yaml"/>
+  <rosparam command="load" file="$(find vision_tool)/config/settings_tool.yaml"/>
+  <rosparam command="load" file="$(find vision_tool)/config/tags_tool.yaml"/>
   </node>
   
  <!-- Pubblica la trasformazione relativa fra il tag0 e il sistema di riferimento tool -->
