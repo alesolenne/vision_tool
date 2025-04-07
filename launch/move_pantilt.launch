@@ -2,23 +2,10 @@
 
  <!-- Pubblica il comando per ruotare la camera pan-tilt -->
 
-    <!-- <arg name="pan_angle" default="-1.9" />
-    <arg name="tilt_angle" default="-0.4" /> -->
-
-    <!-- <arg name="pan_angle" default="-2.5" />
-    <arg name="tilt_angle" default="-0.4" /> -->
-
     <arg name="pan_angle" default="-2.5" />
     <arg name="tilt_angle" default="-0.5" />
-    <!-- <arg name="pan_angle" default="-2.5" />
-    <arg name="tilt_angle" default="-0.4" /> -->
-    <!-- <arg name="pan_angle" default="-2.6" />
-    <arg name="tilt_angle" default="-0.2" /> -->
 
     <node pkg="rostopic" type="rostopic" name="pan_node" args="pub /robot/pantilt/pantilt_pan_controller/command std_msgs/Float64 'data: $(arg pan_angle)'" if='true'/>
     <node pkg="rostopic" type="rostopic" name="tilt_node" args="pub /robot/pantilt/pantilt_tilt_controller/command std_msgs/Float64 'data: $(arg tilt_angle)'" if='true' />
-
- <!-- Lanciare il nodo client di Megapose per rilevare l'oggetto-->
-
     
 </launch>
