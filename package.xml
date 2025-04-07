@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>script_pkg</name>
+  <name>vision_tool</name>
   <version>0.0.0</version>
   <description>The script_pkg package</description>
   <maintainer email="alesolenne@gmail.com">ale</maintainer>
