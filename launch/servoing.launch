@@ -1,0 +1,10 @@
+<launch>
+
+ <!-- Lancio del task in visual servoing -->
+
+ <node name = "vis_serv" pkg = "script_pkg"  type = "vis_servo.py" output='screen'>
+    <param name="beta" value="1" />
+    <param name="mu" value="1" />
+ </node>
+
+</launch>

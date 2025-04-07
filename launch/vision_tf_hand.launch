@@ -1,0 +1,41 @@
+<launch>
+
+ <!-- Pubblica la trasformazione relativa fra il frame base del robot e l'oggetto da prelevare -->
+
+ 	<!-- Parametri oggetti da prendere -->
+	<param name = "n_object" value="3" />
+	<param name = "object_name_1" value = "box1" />
+  	<param name = "object_name_2" value = "box3" />
+  	<param name = "object_name_3" value = "box5" />
+
+    <node pkg = "script_pkg" name = "object_multi_pose" type = "object_pose.py" output = 'screen'/> 
+
+     	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="fake_tool" args="0.111 0.328 0.789 0.895 -0.445 -0.007 -0.009 robot_arm_link0 fake_tool" /> -->
+
+		<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="object_pose" args="-0.090, 0.441, 0.502 -0.358 0.605 0.707 -0.077 robot_arm_link0 object0" /> -->
+
+ <!-- Pubblica la posa di grasp rispetto al frame oggetto -->
+
+ 	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster1" args="0.008 0.045  -0.002 -0.216 0.695 -0.662 0.180 object0 grasp_object0" /> 	
+	<node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster3" args="0.008 0.045  -0.002 -0.216 0.695 -0.662 0.180 object2 grasp_object2" /> -->
+
+ 	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster2" args="0.004 0.063 0.004 -0.265 0.664 -0.646 0.268 object1 grasp_object1" /> -->
+
+ 	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster2" args="0.020 0.045  -0.002 -0.216 0.695 -0.662 0.180 object1 grasp_object1" /> -->
+
+<!-- PROVA FUNZIONANTE -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster1" args="-0.071 0.085 -0.002 0.464 -0.534 0.043 0.706 object0 grasp_object0" /> 	
+	<node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster3" args="-0.071 0.085 -0.002 0.464 -0.534 0.043 0.706 object2 grasp_object2" />
+
+
+ 	<node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster2" args="-0.071 0.085 -0.002 0.464 -0.534 0.043 0.706 object1 grasp_object1" />
+	<node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster4" args="-0.071 0.085 -0.002 0.464 -0.534 0.043 0.706 object3 grasp_object3" />
+
+ 	<node pkg="tf2_ros" type="static_transform_publisher" name="object_broa1" args=" 0.0 0.0 -0.22 0.0 0.0 0.0 1.0 object0 object1" />
+ 	<node pkg="tf2_ros" type="static_transform_publisher" name="object_broa2" args="-0.06 0.0 0.0 0.0 0.0 0.0 1.0 object0 object2" />
+ 	<node pkg="tf2_ros" type="static_transform_publisher" name="object_broa3" args="-0.06 0.0 0.0 0.0 0.0 0.0 1.0 object1 object3" /> -->
+
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster1" args="-0.420 0.459 0.698 0.620 0.778 0.084 -0.062 robot_arm_link0 grasp_object0" /> 	
+	<node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster2" args="-0.243 0.471 0.668 0.465 0.871 0.130 -0.086 robot_arm_link0 grasp_object1" /> 	 -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster3" args="-0.071 0.085 -0.002 0.464 -0.534 0.043 0.706 object2 grasp_object2" /> 	 --> -->
+</launch>

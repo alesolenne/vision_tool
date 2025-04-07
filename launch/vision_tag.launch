@@ -1,0 +1,37 @@
+<launch>
+
+ <!-- Pubblica il comando per ruotare la camera pan-tilt -->
+
+    <arg name="pan_angle" default="-2.5" />
+    <arg name="tilt_angle" default="-0.6" />
+
+    <node pkg="rostopic" type="rostopic" name="pan_node" args="pub /robot/pantilt/pantilt_pan_controller/command std_msgs/Float64 'data: $(arg pan_angle)'" if='true'/>
+    <node pkg="rostopic" type="rostopic" name="tilt_node" args="pub /robot/pantilt/pantilt_tilt_controller/command std_msgs/Float64 'data: $(arg tilt_angle)'" if='true' />
+
+ <!-- Pubblica la stima della posa del tool con gli apriltag rispetto tag0 -->
+ 
+  <arg name="launch_prefix" default="" />
+
+  <!-- Configurare input camera Azure Kinect -->
+  <arg name="camera_name" default="/top_right_rgbd_camera_2/rgb" />
+  <arg name="camera_info" default="camera_info" />
+  <arg name="image_topic" default="image_rect" />
+  <arg name="queue_size" default="1" />
+
+  <!-- Lancio nodo continuos detection node -->
+  <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node" clear_params="true" output="screen" launch-prefix="$(arg launch_prefix)">
+  <!-- Remap topics from those used in code to those on the ROS network -->
+  <remap from="image_rect" to="$(arg camera_name)/image_raw" />
+
+  <param name="publish_tag_detections_image" type="bool" value="true" /><!-- default: false -->
+  <param name="queue_size" type="int" value="$(arg queue_size)" />
+
+  <!-- Caricare file di configurazione -->
+  <rosparam command="load" file="$(find script_pkg)/config/settings_tool.yaml"/>
+  <rosparam command="load" file="$(find script_pkg)/config/tags_tool.yaml"/>
+  </node>
+  
+ <!-- Pubblica la trasformazione relativa fra il tag0 e il sistema di riferimento tool -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="tool_broadcaster" args="-0.00180380 -0.122962 -0.0242062 0.6532815 0.2705981 -0.2705981 0.6532815 tag0 tool" />
+ 
+</launch>

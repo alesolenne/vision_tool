@@ -1,0 +1,18 @@
+<launch>
+
+ <!-- Pubblica il comando per ruotare la camera pan-tilt -->
+
+    <arg name="pan_angle" default="-2.4" />
+    <arg name="tilt_angle" default="-0.4" />
+
+    <node pkg="rostopic" type="rostopic" name="pan_node" args="pub /robot/pantilt/pantilt_pan_controller/command std_msgs/Float64 'data: $(arg pan_angle)'" if='true'/>
+    <node pkg="rostopic" type="rostopic" name="tilt_node" args="pub /robot/pantilt/pantilt_tilt_controller/command std_msgs/Float64 'data: $(arg tilt_angle)'" if='true' />
+
+ <!-- Lanciare il nodo client di Megapose per rilevare il tool-->
+
+    <rosparam command="load" file="$(find visp_megapose)/params/client.yaml" />
+    <param name="object_name" type="string" value="tool" />
+
+    <node pkg="visp_megapose" type="megapose_client" name="megapose_client" output="screen"/>
+
+</launch>
