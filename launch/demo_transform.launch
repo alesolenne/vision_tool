@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- Calibrazione della camera -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_camera_tf2" args=" 0.827967 0.0335691 0.289942 0.5520611, 0.5680235, -0.4350336, -0.428163 panda_link0 camera_color_optical_frame" />
+
+  <!-- Posa di grasp della prima scatola-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_pose_1" args="  0.0 0.03 0.0 0.0 0.0 1.57 object_0_pose_0 grasp_box1" />
+  <!-- Posa di grasp della seconda scatola-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_pose_2" args="  0.0 0.03 0.0 0.0 0.0 1.57 object_0_pose_1 grasp_box2" />
+  <!-- Posa di grasp della terza scatola-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_pose_3" args="  0.0 0.03 0.0 0.0 0.0 1.57 object_0_pose_2 grasp_box3" />
+
+</launch>
