@@ -27,3 +27,6 @@ set -g mouse on
 
 # Altezza
 set -g status-height 3
+
+nano ~/.tmux.conf
+tmux source-file ~/.tmux.conf
