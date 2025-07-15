@@ -1,0 +1,25 @@
+<launch>
+
+ <!-- Pubblica la trasformazione relativa fra il tool e la ventosa -->
+  	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="tip_broadcaster" args="0.0 0.0 0.211 -0.5 -0.5 0.5 0.5 tool tool_extremity" /> -->
+
+ <!-- Pubblica la posa di grasp rispetto al frame tool -->
+  	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster" args="0.067 0.011 -0.048 0.111 0.700 -0.695 -0.116 tool hand_pose_tool" /> -->
+
+ <!-- Pubblica la trasformazione relativa fra il frame base del robot e l'oggetto da prelevare -->
+
+ 	<!-- Parametri oggetti da prendere -->
+
+  	<!-- <rosparam command="load" file="$(find visp_megapose)/params/object_list.yaml" />
+
+    <node pkg = "visp_megapose" name = "object_pose" type = "object_pose.py" output = 'screen'/> -->
+
+ <!-- Pubblica la posa del tool statica-->
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="fake_tool" args="0.628, 0.171, 0.850 0.284, 0.607, 0.657, 0.345 robot_arm_link0 hand_pose_tool" /> 
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="object0" args="0.315, 0.467, 0.666 -0.056, 0.526, 0.660, 0.533 robot_arm_link0 grasp_pose_object0" />
+
+</launch>
+
+

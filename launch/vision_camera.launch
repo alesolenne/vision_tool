@@ -2,7 +2,7 @@
 
  <!-- Lanciare il driver della camera (Azure Kinect) e il nodo per processare le immagini grezze -->
  
-     <include file="$(find robot_bringup)/launch/sensors/camera/camera_complete.launch"/>
+     <!-- <include file="$(find robot_bringup)/launch/sensors/camera/camera_complete.launch"/> -->
 
 <!-- Pubblica la trasformazione della camera che non sono caricate a causa disabilitazione depth-->
 

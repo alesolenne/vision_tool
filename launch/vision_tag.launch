@@ -21,8 +21,9 @@
   <!-- Lancio nodo continuos detection node -->
   <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node" clear_params="true" output="screen" launch-prefix="$(arg launch_prefix)">
   <!-- Remap topics from those used in code to those on the ROS network -->
-  <remap from="image_rect" to="/res$(arg camera_name)/image_raw" />
-
+  <remap from="image_rect" to="/robot/k4a_top/rgb/qhd/image" />
+  <remap from="camera_info" to="/robot/k4a_top/rgb/camer_info" />
+  
   <param name="publish_tag_detections_image" type="bool" value="true" /><!-- default: false -->
   <param name="queue_size" type="int" value="$(arg queue_size)" />
 
