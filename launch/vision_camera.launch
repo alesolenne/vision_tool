@@ -11,10 +11,4 @@
      <node pkg="tf2_ros" type="static_transform_publisher" name="imu_link_1" args="0.004 0.004 -0.051 -0.473 0.470 0.530 0.524 robot_top_right_rgbd_camera_1_depth_camera_link robot_top_right_rgbd_camera_1_imu_link" />
      <node pkg="tf2_ros" type="static_transform_publisher" name="imu_link_2" args="0.004 0.004 -0.050 -0.475 0.472 0.529 0.522 robot_top_right_rgbd_camera_2_depth_camera_link robot_top_right_rgbd_camera_2_imu_link" />
 
- <!-- Nodi per ridimensionamento dell'immagine -->
-  
-     <!-- <node pkg="timed_roslaunch" type="timed_roslaunch.sh" args="10 ros_imresize imresize_fixed.launch" name="t1" output="screen"/> -->
-
-     <!-- <node pkg="timed_roslaunch" type="timed_roslaunch.sh" args="5 ros_imresize imresize_pantilt.launch" name="t2" output="screen"/> -->
-
 </launch>
