@@ -2,14 +2,14 @@
 
  <!-- Lanciare il driver della camera (Azure Kinect) e il nodo per processare le immagini grezze -->
  
-     <!-- <include file="$(find robot_bringup)/launch/sensors/camera/camera_complete.launch"/> -->
+     <include file="$(find robot_bringup)/launch/sensors/camera/camera_complete.launch"/>
 
 <!-- Pubblica la trasformazione della camera che non sono caricate a causa disabilitazione depth-->
 
-     <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="rgb_link_1" args="0.032 0.003 -0.004 0.052  0.000 0.002 0.999 robot_top_right_rgbd_camera_1_depth_camera_link robot_top_right_rgbd_camera_1_rgb_camera_link" />
+     <node pkg="tf2_ros" type="static_transform_publisher" name="rgb_link_1" args="0.032 0.003 -0.004 0.052  0.000 0.002 0.999 robot_top_right_rgbd_camera_1_depth_camera_link robot_top_right_rgbd_camera_1_rgb_camera_link" />
      <node pkg="tf2_ros" type="static_transform_publisher" name="rgb_link_2" args="0.032 0.003 -0.004 0.050 -0.001 0.001 0.999 robot_top_right_rgbd_camera_2_depth_camera_link robot_top_right_rgbd_camera_2_rgb_camera_link" />
      <node pkg="tf2_ros" type="static_transform_publisher" name="imu_link_1" args="0.004 0.004 -0.051 -0.473 0.470 0.530 0.524 robot_top_right_rgbd_camera_1_depth_camera_link robot_top_right_rgbd_camera_1_imu_link" />
-     <node pkg="tf2_ros" type="static_transform_publisher" name="imu_link_2" args="0.004 0.004 -0.050 -0.475 0.472 0.529 0.522 robot_top_right_rgbd_camera_2_depth_camera_link robot_top_right_rgbd_camera_2_imu_link" /> -->
+     <node pkg="tf2_ros" type="static_transform_publisher" name="imu_link_2" args="0.004 0.004 -0.050 -0.475 0.472 0.529 0.522 robot_top_right_rgbd_camera_2_depth_camera_link robot_top_right_rgbd_camera_2_imu_link" />
 
  <!-- Nodi per ridimensionamento dell'immagine -->
   
