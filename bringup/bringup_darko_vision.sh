@@ -14,15 +14,17 @@ WORKSPACE_SETUP="$HOME/catkin_ws/devel/setup.bash"
 
 # --- Sessione bringup DARKO con 3 finestre ---
 if ! tmux has-session -t $SESSION_1 2>/dev/null; then
-  # Crea la sessione per camera
+  # Crea la sessione per camera (sostituisci exec bash con driver della camera se necessario)
   tmux new-session -d -s $SESSION_1 -n "camera" \
-    "bash -c 'source $ROS_SETUP && source $WORKSPACE_SETUP && roslaunch vision_tool vision_camera.launch'"
+    "bash -c 'source $ROS_SETUP && source $WORKSPACE_SETUP && exec bash'"
 
   sleep 1.0
 
   # Crea la finestra per i nodi di ridimensionamento con due pannelli verticali
   tmux new-window -t $SESSION_1:1 -n "resize" \
     "bash -c 'source $ROS_SETUP && source $WORKSPACE_SETUP && roslaunch ros_imresize imresize_color.launch'"
+
+  sleep 1.0
 
   # Splitta verticalmente e lancia il secondo comando
   tmux split-window -h -t $SESSION_1:1 \
