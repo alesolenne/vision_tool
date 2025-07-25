@@ -79,16 +79,6 @@ if ! tmux has-session -t $SESSION_3 2>/dev/null; then
   # Attivare il focus sul primo pannello
   tmux select-pane -t $SESSION_3:0.0
 
-  # Sessione per arduino
-  tmux new-window -t $SESSION_3:1 -n "arduino" \
-    "bash -c 'source $ROS_SETUP && source $WORKSPACE_SETUP && roslaunch vision_tool run_arduino.launch'"
-
-  sleep 3.0
-
-  # Sessione per il servoing con il tool
-  tmux new-window -t $SESSION_3:2 -n "servoing" \
-    "bash -c 'source $ROS_SETUP && source $WORKSPACE_SETUP && roslaunch servoing_pkg servoing.launch'"
-
   # Seleziona la finestra 'server'
   tmux select-window -t $SESSION_3:0
 fi 
