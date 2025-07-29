@@ -18,4 +18,9 @@
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="tool_grasp_pose" args="0.0 0.069 0.0 0.0 0.0 0.0 1.0 robot_arm_link0 config_pose" /> 
 
+<!-- Pubblica la trasformazione fra il frame base del robot e l'oggetto da prelevare (hardcodata)-->
+
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="object_broadcaster1" args="0.200, 0.508, 0.529 -0.186, 0.624, 0.755, 0.078 robot_arm_link0 grasp_pose_object0" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="object_broadcaster2" args="0.156, 0.594, 0.532 -0.186, 0.624, 0.755, 0.078 robot_arm_link0 grasp_pose_object1" /> -->
+
 </launch>
