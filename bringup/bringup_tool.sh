@@ -5,6 +5,7 @@ user=$(whoami)
 catkin_directory="/home/${user}/catkin_ws"
 cd ${catkin_directory}
 source devel/setup.bash
+cd ${catkin_directory}/src/vision_tool/bringup
 
 tmux new-session -s tool -n alessandro -d
 

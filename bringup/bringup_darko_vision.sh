@@ -7,6 +7,7 @@ SESSION_3="tool_detection"
 # Set up the user and path to the catkin workspace
 user=$(whoami)
 catkin_directory="$HOME/${user}/catkin_ws"
+cd ${catkin_directory}/src/vision_tool/bringup
 
 # Percorso al setup ROS e workspace
 ROS_SETUP="/opt/ros/noetic/setup.bash"  # Cambia con la tua distro se usi un'altra
