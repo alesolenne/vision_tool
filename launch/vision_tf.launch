@@ -16,7 +16,7 @@
 
  <!-- Pubblica la posa desiderata per la pianificazione cartesiana-->
 
-    <node pkg="tf2_ros" type="static_transform_publisher" name="tool_grasp_pose" args="0.0 0.069 0.0 0.0 0.0 0.0 1.0 robot_arm_link0 config_pose" /> 
+    <node pkg="tf2_ros" type="static_transform_publisher" name="config_pose" args="0.0 0.069 0.0 0.0 0.0 0.0 1.0 robot_arm_link0 config_pose" /> 
 
 <!-- Pubblica la trasformazione fra il frame base del robot e l'oggetto da prelevare (hardcodata)-->
 
