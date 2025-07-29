@@ -6,16 +6,16 @@
  <!-- Pubblica la posa di grasp rispetto al frame tool -->
   	<node pkg="tf2_ros" type="static_transform_publisher" name="grasp_broadcaster" args="0.067 0.011 -0.048 0.111 0.700 -0.695 -0.116 tool hand_pose_tool" />
 
- <!-- Pubblica la trasformazione relativa fra il frame base del robot e l'oggetto da prelevare -->
-
- 	<!-- Parametri oggetti da prendere -->
-
-  	<!-- <rosparam command="load" file="$(find visp_megapose)/params/object_list.yaml" />
-
-    <node pkg = "visp_megapose" name = "object_pose" type = "object_pose.py" output = 'screen'/> -->
-
  <!-- Pubblica la posa del tool statica-->
 
     <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="fake_tool" args="0.112 0.374 0.792 0.913 -0.407 -0.028 -0.012 robot_arm_link0 fake_tool" />  -->
+
+ <!-- Pubblica la posa di grasp dell-oggetto con tool (MegaPose singolo, per modelli diversi guarda misure su Blender)-->
+
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="tool_grasp_pose" args="0.0 0.069 0.0 0.0 0.0 0.0 1.0 box1_1 grasp_pose_object0" />  -->
+
+ <!-- Pubblica la posa desiderata per la pianificazione cartesiana-->
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="tool_grasp_pose" args="0.0 0.069 0.0 0.0 0.0 0.0 1.0 robot_arm_link0 config_pose" /> 
 
 </launch>
