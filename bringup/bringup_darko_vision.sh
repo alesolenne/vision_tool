@@ -69,7 +69,7 @@ if ! tmux has-session -t $SESSION_2 2>/dev/null; then
 fi  
 
 if ! tmux has-session -t $SESSION_3 2>/dev/null; then
-  # Crea la sessione megapose
+  # Crea la sessione tool
   tmux new-session -d -s $SESSION_3 -n "tool"
 
   # Sessione per la visione del tool
@@ -81,7 +81,7 @@ if ! tmux has-session -t $SESSION_3 2>/dev/null; then
   # Attivare il focus sul primo pannello
   tmux select-pane -t $SESSION_3:0.0
 
-  # Seleziona la finestra 'server'
+  # Seleziona la finestra
   tmux select-window -t $SESSION_3:0
 fi 
 
